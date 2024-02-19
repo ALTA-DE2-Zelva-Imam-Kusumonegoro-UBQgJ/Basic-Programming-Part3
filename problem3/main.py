@@ -1,5 +1,10 @@
-def prime_number(num):
-    return "error response'
+def prime_number(number):
+    if number <= 1:
+        return "Not Prime"
+    for x in range(2, number):
+        if number % x == 0:
+            return "Not Prime"
+    return "Prime"
 
 if __name__ == '__main__':
     print(prime_number(11)) # "Prime"

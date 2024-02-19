@@ -1,6 +1,19 @@
-def full_prima(N):
-    # your code here
-    return ''
+def prime_number(number):
+    if number <= 1:
+        return False
+    for x in range(2, number):
+        if number % x == 0:
+            return False
+    return True
+
+def full_prima(number):
+    num_digits = len(str(number))
+    for _ in range(num_digits):
+        digit = number % 10
+        if not prime_number(digit):
+            return False
+        number //= 10
+    return True
 
 if __name__ == '__main__':
     print(full_prima(2)) # True
